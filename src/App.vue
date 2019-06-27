@@ -42,6 +42,125 @@ export default {
       currentQuestionIndex: 0,
       questions: [
         {
+          label: 'Que perd Sonic lorsqu\'il est touché ?',
+          choices: [
+            'Son slip',
+            'Des anneaux',
+            'Ses poils',
+            'Un coeur'
+          ],
+          correct: 'answer2',
+          imgJeux: require('../src/assets/img/sonic.jpeg')
+        },
+
+        {
+          label: 'Que récolte les petites soeurs dans bioshock ?',
+          choices: [
+            'Du Mojo',
+            'De l\'Adam',
+            'Des clopes',
+            'De la viande'
+          ],
+          correct: 'answer2',
+          imgJeux: require('../src/assets/img/biosh.jpg')
+        },
+
+         {
+          label: 'Dans Half-Life l\'arme emblématique est :',
+          choices: [
+            'Le marteau',
+            'Le couteau',
+            'Le pied de biche',
+            'La cuillère en boé'
+          ],
+          correct: 'answer2',
+          imgJeux: require('../src/assets/img/half.jpg')
+        },
+
+         {
+          label: 'Comment s\'appelle l\'assistant de professeur Layton ?',
+          choices: [
+            'Luke',
+            'Mr Mouche',
+            'Paul',
+            'Joe'
+          ],
+          correct: 'answer 2',
+          imgJeux: require('../src/assets/img/layton.jpg')
+        },
+
+         {
+          label: 'La phrase que vous verrez le plus dans ce jeu ?',
+          choices: [
+            '"Fin du jeu"',
+            '"Le boss est mort"',
+            '"Sauvegarde automatique"',
+            '"Vous êtes mort"'
+          ],
+          correct: 'answer2',
+          imgJeux: require('../src/assets/img/darkSoul.jpg')
+        },
+      {
+          label: 'Quel métier exerce abe ?',
+          choices: [
+            'Cuisinier',
+            'Balayeur',
+            'Ingénieur',
+            'Gardien'
+          ],
+          correct: 'answer2',
+          imgJeux: require('../src/assets/img/abe.jpeg')
+        },
+
+        {
+          label: 'Une de ces armes n\'existe pas dans worms, laquelle ?',
+          choices: [
+            'Justice',
+            'Poulet',
+            'Pigeon',
+            'Vase ming'
+          ],
+          correct: 'answer2',
+          imgJeux: require('../src/assets/img/worms.png')
+        },
+
+         {
+          label: 'De quel dieux Kratos tient sa puissance et ses lames du chaos ?',
+          choices: [
+            'Hadès',
+            'David',
+            'Zeus',
+            'Arès'
+          ],
+          correct: 'answer2',
+          imgJeux: require('../src/assets/img/godOf.jpg')
+        },
+
+         {
+          label: 'Le masque de Jones(Le Crocodile) offre l\'effet :',
+          choices: [
+            'Le jeu est bien plus sanglant',
+            'Vous commencez avec un fusil à pompe',
+            'La musique du jeu est différente',
+            'Le jeu est en noir et blanc'
+          ],
+          correct: 'answer 2',
+          imgJeux: require('../src/assets/img/hotline.jpg')
+        },
+
+         {
+          label: 'Comment s\'appelle le méchant de l\'histoire ?',
+          choices: [
+            'Francky Vincent',
+            'Zarok',
+            'Helldark',
+            'Elfarim'
+          ],
+          correct: 'answer2',
+          imgJeux: require('../src/assets/img/medievil.jpg')
+        },
+
+        {
           label: 'Comment s\'appelle le fruit dans Crash Bandicoot ?',
           choices: [
             'Mango',
@@ -137,136 +256,136 @@ export default {
            {
           label: 'Les sims avaient pour langage le "Simlish", quelle proposition n\'est pas en Simlish ?',
           choices: [
-            'answer1',
-            'answer2',
-            'answer3',
-            'answer4'
+            'Sul Sul',
+            'Cobini !',
+            'Ooh be Gah !',
+            'Bloo bagoo'
           ],
           correct: 'answer2',
           imgJeux: require('../src/assets/img/sims.png')
         },
            {
-          label: 'Question 10',
+          label: 'Dans Dofus, quel dofus est faux ?',
           choices: [
-            'answer1',
-            'answer2',
-            'answer3',
-            'answer4'
-          ],
-          correct: 'answer2',
-          imgJeux: require('../src/assets/img/mariokart.jpg')
-        },
-           {
-          label: 'Question 11',
-          choices: [
-            'answer1',
-            'answer2',
-            'answer3',
-            'answer4'
+            'Donille',
+            'Kaliptus',
+            'Vulbis',
+            'Cawotte'
           ],
           correct: 'answer2',
           imgJeux: require('../src/assets/img/dofus.jpeg')
         },
-        {
-          label: 'Question 12',
+           {
+          label: 'Dans le dernier mario kart, combien y-a t\'il d\'objet au total ?(Attention les lots de 3 comptent comme un objet)',
           choices: [
-            'answer1',
-            'answer2',
-            'answer3',
-            'answer4'
+            '22',
+            '9',
+            '15',
+            '20'
+          ],
+          correct: 'answer2',
+          imgJeux: require('../src/assets/img/mariokart.jpg')
+        },
+        {
+          label: 'De quel couleur sont les chaussures de Rayman ?',
+          choices: [
+            'Blanche',
+            'Jaune',
+            'Rouge',
+            'Grise'
           ],
           correct: 'answer2',
           imgJeux: require('../src/assets/img/rayman.jpg')
         },
 
         {
-          label: 'Question 13',
+          label: 'Dans Bubble Bobble un objet permettait d\'augmenter la rapidité de tir :',
           choices: [
-            'answer1',
-            'answer2',
-            'answer3',
-            'answer4'
+            'La lampe',
+            'Le bonbon jaune',
+            'Le bonbon bleu',
+            'Le parapluie'
           ],
           correct: 'answer2',
           imgJeux: require('../src/assets/img/bubble.jpeg')
         },
 
          {
-          label: 'Question 14',
+          label: 'Dans The witcher, Geralt et ses amis sorceleur fondent leur école et lieu de vie à ?',
           choices: [
-            'answer1',
-            'answer2',
-            'answer3',
-            'answer4'
+            'Kaer Adfab',
+            'Kaer Morhen',
+            'Kaer Solaz',
+            'Kaer Guzul'
           ],
           correct: 'answer2',
           imgJeux: require('../src/assets/img/geralt.jpg')
         },
 
          {
-          label: 'Question 15',
+          label: 'Whesker est le méchant de Résident Évil, mais quel est son prénom ?',
           choices: [
-            'answer1',
-            'answer2',
-            'answer3',
-            'answer4'
+            'Joseph',
+            'Albert',
+            'John',
+            'Richard'
           ],
           correct: 'answer 2',
           imgJeux: require('../src/assets/img/resident.jpg')
         },
 
          {
-          label: 'Question 16',
+          label: 'Un de ces parcours de SSX TRICKY n\'en est pas un : ',
           choices: [
-            'answer1',
-            'answer2',
-            'answer3',
-            'answer4'
+            'Garibaldi',
+            'Oclao Flex',
+            'Elysium Alps',
+            'Pipe Dream'
           ],
           correct: 'answer2',
           imgJeux: require('../src/assets/img/ssx.jpg')
         },
 
          {
-          label: 'Question 17',
+          label: 'Dans Pokémon, le fameux petit fils du docteur Chen s\'appelle ?',
           choices: [
-            'answer1',
-            'answer2',
-            'answer3',
-            'answer4'
+            'Guillaume',
+            'Kevin',
+            'Régis',
+            'Jacky'
           ],
           correct: 'answer2',
           imgJeux: require('../src/assets/img/pokemon.png')
         },
            {
-          label: 'Question 18',
+          label: 'Comment s\'appelle l\'arme de base dans Cuphead ?',
           choices: [
-            'answer1',
-            'answer2',
-            'answer3',
-            'answer4'
+            'Cupshooter',
+            'Peashooter',
+            'Handshooter',
+            'FingerShoot'
           ],
           correct: 'answer2',
           imgJeux: require('../src/assets/img/cuphead.jpg')
         },
            {
-          label: 'Question 19',
+          label: 'Dans Heart of Darkness, Andy se rend à DarkLands pour retrouver :',
           choices: [
-            'answer1',
-            'answer2',
-            'answer3',
-            'answer4'
+            'Son grand-père',
+            'Son chien',
+            'Sa soeur',
+            'Bénédicte'
           ],
           correct: 'answer2',
           imgJeux: require('../src/assets/img/heartOf.jpg')
         },
            {
-          label: 'Question 20',
+          label: 'Dans le fabuleux jeu Tétris, combien y-a t\'il de forme ?',
           choices: [
-            'answer1',
-            'answer2',
-            'answer3',
-            'answer4'
+            '5',
+            '9',
+            '6',
+            '7'
           ],
           correct: 'answer2',
           imgJeux: require('../src/assets/img/tetris.png')
