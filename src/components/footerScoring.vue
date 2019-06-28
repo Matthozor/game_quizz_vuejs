@@ -27,16 +27,7 @@ export default {
         ],
         phrase: 'hello'
         }
-    },
-    methods: {
-        pointsWin() {
-            this.phrase = this.phrases[2]
-        }
-    },
-     mounted() {
-      console.log(this.phrases[1])
-      console.log(this.phrases[0])
-  }
+    }
 }
 </script>
 

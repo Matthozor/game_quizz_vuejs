@@ -39,8 +39,8 @@ export default {
   methods: {
     storePoints(correct) {
       this.results[this.currentQuestionIndex] = correct;
-      console.log(correct)
-      console.log(this.results);
+      // console.log(correct)
+      // console.log(this.results);
     },
 
     controlQuizz () {
@@ -48,7 +48,7 @@ export default {
       this.ajoutPoint()
       if (this.currentQuestionIndex === this.questions.length - 1) {
         this.fin = true;
-        console.log(controlClass)
+        // console.log(controlClass)
       } else {
         this.indexQuestion++
         this.currentQuestionIndex++
