@@ -1,15 +1,17 @@
 <template>
   <div id="app">
-    <titlepage msg="Game-Quizz"/>
+    <!-- <titlepage msg="Game-Quizz"/> -->
 
     <div class="container">
 
-      <question :question="currentQuestion.label" :choices="currentQuestion.choices"
-      :correct="currentQuestion.correct" :imgJeux="currentQuestion.imgJeux" />
+      <question :indexQuestion="indexQuestion" :question="currentQuestion.label" :choices="currentQuestion.choices"
+      :correct="currentQuestion.correct" :imgJeux="currentQuestion.imgJeux" @result="storePoints"/>
     </div>
-    <button class="buttonQuizz" @click="currentQuestionIndex++">Next</button>
+    <div class="buttonPlacement">
+    <button class="buttonQuizz" @click="controlQuizz">Next</button>
     <br>
-    <buttonScore />
+    <button class="buttonQuizz" @click="restart">Restart</button>
+    </div>
     <footerScoring :points="points" />
   </div>
 </template>
@@ -18,9 +20,8 @@
 import titlepage from './components/title.vue'
 import question from './components/question.vue'
 import footerScoring from './components/footerScoring.vue'
-import buttonScore from './components/buttonScore.vue'
 import 'reset-css';
-
+import { log } from 'util';
 
 
 export default {
@@ -28,16 +29,46 @@ export default {
   components: {
     titlepage,
     question,
-    footerScoring,
-    buttonScore
+    footerScoring
   },
   computed: {
     currentQuestion() {
       return this.questions[this.currentQuestionIndex];
     }
   },
+  methods: {
+    storePoints(correct) {
+      this.results[this.currentQuestionIndex] = correct;
+      console.log(correct)
+      console.log(this.results);
+    },
+
+    controlQuizz () {
+      let controlClass = document.querySelector('.hideButton');
+      this.ajoutPoint()
+      if (this.currentQuestionIndex === this.questions.length - 1) {
+        this.fin = true;
+        console.log(controlClass)
+      } else {
+        this.indexQuestion++
+        this.currentQuestionIndex++
+      }
+    },
+
+    ajoutPoint() {
+      this.points = this.results.filter(q => q).length;
+    },
+
+    restart() {
+      this.fin = this.currentQuestionIndex = this.points = 0;
+      this.indexQuestion = 1;
+    }
+  },
   data() {
     return {
+      results: [],
+      indexQuestion: 1,
+      fin: false,
       points: 0,
       currentQuestionIndex: 0,
       questions: [
@@ -49,7 +80,7 @@ export default {
             'Ses poils',
             'Un coeur'
           ],
-          correct: 'answer2',
+          correct: 1,
           imgJeux: require('../src/assets/img/sonic.jpeg')
         },
 
@@ -61,7 +92,7 @@ export default {
             'Des clopes',
             'De la viande'
           ],
-          correct: 'answer2',
+          correct: 1,
           imgJeux: require('../src/assets/img/biosh.jpg')
         },
 
@@ -73,7 +104,7 @@ export default {
             'Le pied de biche',
             'La cuillère en boé'
           ],
-          correct: 'answer2',
+          correct: 2,
           imgJeux: require('../src/assets/img/half.jpg')
         },
 
@@ -85,7 +116,8 @@ export default {
             'Paul',
             'Joe'
           ],
-          correct: 'answer 2',
+          
+          correct: 0,
           imgJeux: require('../src/assets/img/layton.jpg')
         },
 
@@ -97,10 +129,10 @@ export default {
             '"Sauvegarde automatique"',
             '"Vous êtes mort"'
           ],
-          correct: 'answer2',
+          correct: 3,
           imgJeux: require('../src/assets/img/darkSoul.jpg')
         },
-      {
+      {   
           label: 'Quel métier exerce abe ?',
           choices: [
             'Cuisinier',
@@ -108,7 +140,7 @@ export default {
             'Ingénieur',
             'Gardien'
           ],
-          correct: 'answer2',
+          correct: 1,
           imgJeux: require('../src/assets/img/abe.jpeg')
         },
 
@@ -120,7 +152,7 @@ export default {
             'Pigeon',
             'Vase ming'
           ],
-          correct: 'answer2',
+          correct: 1,
           imgJeux: require('../src/assets/img/worms.png')
         },
 
@@ -132,7 +164,7 @@ export default {
             'Zeus',
             'Arès'
           ],
-          correct: 'answer2',
+          correct: 3,
           imgJeux: require('../src/assets/img/godOf.jpg')
         },
 
@@ -144,7 +176,7 @@ export default {
             'La musique du jeu est différente',
             'Le jeu est en noir et blanc'
           ],
-          correct: 'answer 2',
+          correct: 0,
           imgJeux: require('../src/assets/img/hotline.jpg')
         },
 
@@ -152,11 +184,11 @@ export default {
           label: 'Comment s\'appelle le méchant de l\'histoire ?',
           choices: [
             'Francky Vincent',
-            'Zarok',
             'Helldark',
+            'Zarok',
             'Elfarim'
           ],
-          correct: 'answer2',
+          correct: 2,
           imgJeux: require('../src/assets/img/medievil.jpg')
         },
 
@@ -168,7 +200,7 @@ export default {
             'Danou',
             'Pomme'
           ],
-          correct: 'answer2',
+          correct: 1,
           imgJeux: require('../src/assets/img/crash-bandicoot.jpg')
         },
 
@@ -180,7 +212,7 @@ export default {
             '7',
             '3'
           ],
-          correct: 'answer2',
+          correct: 2,
           imgJeux: require('../src/assets/img/wow.png')
         },
 
@@ -192,7 +224,7 @@ export default {
             '8 minutes',
             'Cela dépend de la fatigue du personnage'
           ],
-          correct: 'answer2',
+          correct: 0,
           imgJeux: require('../src/assets/img/minecraft.jpg')
         },
 
@@ -204,7 +236,7 @@ export default {
             'L\'armure d\'imu',
             'L\'armure d\'isu'
           ],
-          correct: 'answer 2',
+          correct: 3,
           imgJeux: require('../src/assets/img/assassin.jpg')
         },
 
@@ -216,7 +248,7 @@ export default {
             '101',
             '76'
           ],
-          correct: 'answer2',
+          correct: 1,
           imgJeux: require('../src/assets/img/spyro.jpg')
         },
 
@@ -228,7 +260,7 @@ export default {
             'Tibia de léoric',
             'Gemme bouillonnante'
           ],
-          correct: 'answer2',
+          correct: 3,
           imgJeux: require('../src/assets/img/diablo.jpg')
         },
            {
@@ -239,7 +271,7 @@ export default {
             '+ 1,5 puis x 2 le tout',
             '+ 0,75 puis x 1,75 le tout'
           ],
-          correct: 'answer2',
+          correct: 0,
           imgJeux: require('../src/assets/img/binding.jpg')
         },
            {
@@ -250,7 +282,7 @@ export default {
             'R1 R2 L1 R2 GAUCHE BAS DROITE HAUT GAUCHE BAS BAS BAS',
             'R1 R2 L1 L2 GAUCHE BAS HAUT DROITE HAUT BAS BAS BAS'
           ],
-          correct: 'answer2',
+          correct: 2,
           imgJeux: require('../src/assets/img/gta.jpg')
         },
            {
@@ -261,7 +293,7 @@ export default {
             'Ooh be Gah !',
             'Bloo bagoo'
           ],
-          correct: 'answer2',
+          correct: 1,
           imgJeux: require('../src/assets/img/sims.png')
         },
            {
@@ -272,7 +304,7 @@ export default {
             'Vulbis',
             'Cawotte'
           ],
-          correct: 'answer2',
+          correct: 0,
           imgJeux: require('../src/assets/img/dofus.jpeg')
         },
            {
@@ -283,7 +315,7 @@ export default {
             '15',
             '20'
           ],
-          correct: 'answer2',
+          correct: 0,
           imgJeux: require('../src/assets/img/mariokart.jpg')
         },
         {
@@ -294,7 +326,7 @@ export default {
             'Rouge',
             'Grise'
           ],
-          correct: 'answer2',
+          correct: 1,
           imgJeux: require('../src/assets/img/rayman.jpg')
         },
 
@@ -306,7 +338,7 @@ export default {
             'Le bonbon bleu',
             'Le parapluie'
           ],
-          correct: 'answer2',
+          correct: 1,
           imgJeux: require('../src/assets/img/bubble.jpeg')
         },
 
@@ -314,11 +346,11 @@ export default {
           label: 'Dans The witcher, Geralt et ses amis sorceleur fondent leur école et lieu de vie à ?',
           choices: [
             'Kaer Adfab',
-            'Kaer Morhen',
             'Kaer Solaz',
-            'Kaer Guzul'
+            'Kaer Guzul',
+            'Kaer Morhen'
           ],
-          correct: 'answer2',
+          correct: 3,
           imgJeux: require('../src/assets/img/geralt.jpg')
         },
 
@@ -326,23 +358,23 @@ export default {
           label: 'Whesker est le méchant de Résident Évil, mais quel est son prénom ?',
           choices: [
             'Joseph',
-            'Albert',
             'John',
+            'Albert',
             'Richard'
           ],
-          correct: 'answer 2',
+          correct: 2,
           imgJeux: require('../src/assets/img/resident.jpg')
         },
 
          {
           label: 'Un de ces parcours de SSX TRICKY n\'en est pas un : ',
           choices: [
-            'Garibaldi',
             'Oclao Flex',
+            'Garibaldi',
             'Elysium Alps',
             'Pipe Dream'
           ],
-          correct: 'answer2',
+          correct: 0,
           imgJeux: require('../src/assets/img/ssx.jpg')
         },
 
@@ -354,7 +386,7 @@ export default {
             'Régis',
             'Jacky'
           ],
-          correct: 'answer2',
+          correct: 2,
           imgJeux: require('../src/assets/img/pokemon.png')
         },
            {
@@ -365,18 +397,18 @@ export default {
             'Handshooter',
             'FingerShoot'
           ],
-          correct: 'answer2',
+          correct: 1,
           imgJeux: require('../src/assets/img/cuphead.jpg')
         },
            {
           label: 'Dans Heart of Darkness, Andy se rend à DarkLands pour retrouver :',
           choices: [
-            'Son grand-père',
             'Son chien',
+            'Son grand-père',
             'Sa soeur',
             'Bénédicte'
           ],
-          correct: 'answer2',
+          correct: 0,
           imgJeux: require('../src/assets/img/heartOf.jpg')
         },
            {
@@ -387,7 +419,7 @@ export default {
             '6',
             '7'
           ],
-          correct: 'answer2',
+          correct: 3,
           imgJeux: require('../src/assets/img/tetris.png')
         }
       ]
@@ -435,16 +467,17 @@ body {
 }
 h1 {
   color: #FFF;
-    margin: 0;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: -webkit-xxx-large;
 }
 .container {
   background-color: #ffffffbd;
-  border-bottom: 2px solid #FFF;
-  border-top: 2px solid #FFF;
+  border-bottom: 3px solid #FFF;
+  border-top: 3px solid #FFF;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -453,11 +486,29 @@ h1 {
   margin-bottom: 25px;
   margin-top: 25px;
 }
+.question {
+    margin-top: 13px;
+    color: white;
+    border-radius: 10px;
+    border-bottom: 3px solid #FFF;
+    background-color: #3c546d;
+    width: 50%;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .container p {
   background-color: #577c9c9c;
-  /* color: rgba(0, 0, 0, 0.57); */
   color: #FFF;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .container input {
   cursor: pointer;
@@ -485,6 +536,15 @@ a {
     margin: 0 auto;
 }
 
+.hideButton {
+  display: none;
+}
+.buttonPlacement {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .buttonQuizz{
   cursor: pointer;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -495,6 +555,8 @@ a {
   width: 90px;
   height: 70px;
   border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 .buttonQuizz:hover {
   background-color: #577c9c9c;
@@ -517,10 +579,12 @@ a {
 
 img {
   width: 150px;
-    height: 150px;
-    margin: 0 auto;
-    margin-top: 10px;
-    border: 5px double #577c9c9c;
-    border-radius: 10px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border: 5px double #577c9c9c;
+  border-radius: 10px;
+  background-color: #FFF;
+  margin-bottom: 10px;
 }
 </style>

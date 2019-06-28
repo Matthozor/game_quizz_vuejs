@@ -1,7 +1,7 @@
 <template>
     <div class="footer-score">
         <span>{{ phrase }}</span>
-        <span>{{ points }} points</span>
+        <span>Score: {{ points }} / 30</span>
     </div>
 </template>
 

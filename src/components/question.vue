@@ -1,10 +1,11 @@
 <template>
     <div class="question-contain">
         <img :src='imgJeux' alt="crash">
+        <span class="question">Question {{ indexQuestion }}</span>
         <p>{{ question }}</p>
-        <div v-for="choice in choices" :key="choice" class="container-choice">       
+        <div v-for="(choice, index) in choices" :key="choice" class="container-choice">       
             <span>{{ choice }}</span>
-            <input @change="verify" v-model="answerModel" :value="choice" type="radio" :name="question">
+            <input @change="() => verify(index)" v-model="answerModel" :value="choice" type="radio" :name="question">
             <br>
         </div>
     </div>
@@ -19,7 +20,8 @@ export default {
         'question',
         'choices',
         'correct',
-        'imgJeux'
+        'imgJeux',
+        'indexQuestion'
     ],
     data() {
         return {
@@ -27,8 +29,10 @@ export default {
         }
     },
     methods: {
-        verify() {
-            console.log(this.answerModel)
+        verify(index) {
+            let correct = index === this.correct;
+
+            this.$emit('result', correct);
         }
     }
 }
