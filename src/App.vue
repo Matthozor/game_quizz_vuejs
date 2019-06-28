@@ -81,7 +81,7 @@ export default {
             'Un coeur'
           ],
           correct: 1,
-          imgJeux: require('../src/assets/img/sonic.jpeg')
+          imgJeux: require('./assets/img/sonic.jpeg')
         },
 
         {
@@ -93,7 +93,7 @@ export default {
             'De la viande'
           ],
           correct: 1,
-          imgJeux: require('../src/assets/img/biosh.jpg')
+          imgJeux: require('./assets/img/biosh.jpg')
         },
 
          {
@@ -105,7 +105,7 @@ export default {
             'La cuillère en boé'
           ],
           correct: 2,
-          imgJeux: require('../src/assets/img/half.jpg')
+          imgJeux: require('./assets/img/half.jpg')
         },
 
          {
@@ -118,7 +118,7 @@ export default {
           ],
           
           correct: 0,
-          imgJeux: require('../src/assets/img/layton.jpg')
+          imgJeux: require('./assets/img/layton.jpg')
         },
 
          {
@@ -130,7 +130,7 @@ export default {
             '"Vous êtes mort"'
           ],
           correct: 3,
-          imgJeux: require('../src/assets/img/darkSoul.jpg')
+          imgJeux: require('./assets/img/darkSoul.jpg')
         },
       {   
           label: 'Quel métier exerce abe ?',
@@ -141,7 +141,7 @@ export default {
             'Gardien'
           ],
           correct: 1,
-          imgJeux: require('../src/assets/img/abe.jpeg')
+          imgJeux: require('./assets/img/abe.jpeg')
         },
 
         {
@@ -153,7 +153,7 @@ export default {
             'Vase ming'
           ],
           correct: 1,
-          imgJeux: require('../src/assets/img/worms.png')
+          imgJeux: require('./assets/img/worms.png')
         },
 
          {
@@ -165,7 +165,7 @@ export default {
             'Arès'
           ],
           correct: 3,
-          imgJeux: require('../src/assets/img/godOf.jpg')
+          imgJeux: require('./assets/img/godOf.jpg')
         },
 
          {
@@ -177,7 +177,7 @@ export default {
             'Le jeu est en noir et blanc'
           ],
           correct: 0,
-          imgJeux: require('../src/assets/img/hotline.jpg')
+          imgJeux: require('./assets/img/hotline.jpg')
         },
 
          {
@@ -189,7 +189,7 @@ export default {
             'Elfarim'
           ],
           correct: 2,
-          imgJeux: require('../src/assets/img/medievil.jpg')
+          imgJeux: require('./assets/img/medievil.jpg')
         },
 
         {
@@ -201,7 +201,7 @@ export default {
             'Pomme'
           ],
           correct: 1,
-          imgJeux: require('../src/assets/img/crash-bandicoot.jpg')
+          imgJeux: require('./assets/img/crash-bandicoot.jpg')
         },
 
         {
@@ -213,7 +213,7 @@ export default {
             '3'
           ],
           correct: 2,
-          imgJeux: require('../src/assets/img/wow.png')
+          imgJeux: require('./assets/img/wow.png')
         },
 
          {
@@ -225,7 +225,7 @@ export default {
             'Cela dépend de la fatigue du personnage'
           ],
           correct: 0,
-          imgJeux: require('../src/assets/img/minecraft.jpg')
+          imgJeux: require('./assets/img/minecraft.jpg')
         },
 
          {
@@ -237,7 +237,7 @@ export default {
             'L\'armure d\'isu'
           ],
           correct: 3,
-          imgJeux: require('../src/assets/img/assassin.jpg')
+          imgJeux: require('./assets/img/assassin.jpg')
         },
 
          {
@@ -249,7 +249,7 @@ export default {
             '76'
           ],
           correct: 1,
-          imgJeux: require('../src/assets/img/spyro.jpg')
+          imgJeux: require('./assets/img/spyro.jpg')
         },
 
          {
@@ -261,7 +261,7 @@ export default {
             'Gemme bouillonnante'
           ],
           correct: 3,
-          imgJeux: require('../src/assets/img/diablo.jpg')
+          imgJeux: require('./assets/img/diablo.jpg')
         },
            {
           label: 'Dans Binding of Isaac, l\'objet "Cricket\'s Head" améliore les dégats :',
@@ -272,7 +272,7 @@ export default {
             '+ 0,75 puis x 1,75 le tout'
           ],
           correct: 0,
-          imgJeux: require('../src/assets/img/binding.jpg')
+          imgJeux: require('./assets/img/binding.jpg')
         },
            {
           label: 'Dans GTA-San Andreas, le code pour les armes palier 3 était :',
@@ -283,7 +283,7 @@ export default {
             'R1 R2 L1 L2 GAUCHE BAS HAUT DROITE HAUT BAS BAS BAS'
           ],
           correct: 2,
-          imgJeux: require('../src/assets/img/gta.jpg')
+          imgJeux: require('./assets/img/gta.jpg')
         },
            {
           label: 'Les sims avaient pour langage le "Simlish", quelle proposition n\'est pas en Simlish ?',
@@ -294,7 +294,7 @@ export default {
             'Bloo bagoo'
           ],
           correct: 1,
-          imgJeux: require('../src/assets/img/sims.png')
+          imgJeux: require('./assets/img/sims.png')
         },
            {
           label: 'Dans Dofus, quel dofus est faux ?',
@@ -305,7 +305,7 @@ export default {
             'Cawotte'
           ],
           correct: 0,
-          imgJeux: require('../src/assets/img/dofus.jpeg')
+          imgJeux: require('./assets/img/dofus.jpeg')
         },
            {
           label: 'Dans le dernier mario kart, combien y-a t\'il d\'objet au total ?(Attention les lots de 3 comptent comme un objet)',
@@ -316,7 +316,7 @@ export default {
             '20'
           ],
           correct: 0,
-          imgJeux: require('../src/assets/img/mariokart.jpg')
+          imgJeux: require('./assets/img/mariokart.jpg')
         },
         {
           label: 'De quel couleur sont les chaussures de Rayman ?',
@@ -327,7 +327,7 @@ export default {
             'Grise'
           ],
           correct: 1,
-          imgJeux: require('../src/assets/img/rayman.jpg')
+          imgJeux: require('./assets/img/rayman.jpg')
         },
 
         {
@@ -339,7 +339,7 @@ export default {
             'Le parapluie'
           ],
           correct: 1,
-          imgJeux: require('../src/assets/img/bubble.jpeg')
+          imgJeux: require('./assets/img/bubble.jpeg')
         },
 
          {
@@ -351,7 +351,7 @@ export default {
             'Kaer Morhen'
           ],
           correct: 3,
-          imgJeux: require('../src/assets/img/geralt.jpg')
+          imgJeux: require('./assets/img/geralt.jpg')
         },
 
          {
@@ -363,7 +363,7 @@ export default {
             'Richard'
           ],
           correct: 2,
-          imgJeux: require('../src/assets/img/resident.jpg')
+          imgJeux: require('./assets/img/resident.jpg')
         },
 
          {
@@ -375,7 +375,7 @@ export default {
             'Pipe Dream'
           ],
           correct: 0,
-          imgJeux: require('../src/assets/img/ssx.jpg')
+          imgJeux: require('./assets/img/ssx.jpg')
         },
 
          {
@@ -387,7 +387,7 @@ export default {
             'Jacky'
           ],
           correct: 2,
-          imgJeux: require('../src/assets/img/pokemon.png')
+          imgJeux: require('./assets/img/pokemon.png')
         },
            {
           label: 'Comment s\'appelle l\'arme de base dans Cuphead ?',
@@ -398,7 +398,7 @@ export default {
             'FingerShoot'
           ],
           correct: 1,
-          imgJeux: require('../src/assets/img/cuphead.jpg')
+          imgJeux: require('./assets/img/cuphead.jpg')
         },
            {
           label: 'Dans Heart of Darkness, Andy se rend à DarkLands pour retrouver :',
@@ -409,7 +409,7 @@ export default {
             'Bénédicte'
           ],
           correct: 0,
-          imgJeux: require('../src/assets/img/heartOf.jpg')
+          imgJeux: require('./assets/img/heartOf.jpg')
         },
            {
           label: 'Dans le fabuleux jeu Tétris, combien y-a t\'il de forme ?',
@@ -420,7 +420,7 @@ export default {
             '7'
           ],
           correct: 3,
-          imgJeux: require('../src/assets/img/tetris.png')
+          imgJeux: require('./assets/img/tetris.png')
         }
       ]
     }
